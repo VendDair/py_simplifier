@@ -57,7 +57,7 @@ class Compile:
                 # check if the word ends with ":"
                 elif word.endswith(":"):
                     if word.startswith('("'):
-                        print(word)
+                        # print(word)
                         continue
                     # remove the ":" and add " ="
                     words[j] = word[:-1] + " ="
@@ -68,27 +68,27 @@ class Compile:
             # posediting some words
             # editing prl word
             if "prl" in new_line:
-                print(new_line)
+                # print(new_line)
                 new_line = new_line.replace("prl", "print(")
                 new_line = new_line + " )"
-                # new_line = new_line.replace("print", "kek")
+                # new_line = new_line.replace("# print", "kek")
             # editing inp
             if "inp" in new_line:
-                print(new_line)
+                # print(new_line)
                 new_line = new_line.replace("inp", "input(")
                 new_line = new_line + " )"
             # editing () in line with def
             if "def" in new_line and not "(" in new_line and not ")" in new_line:
-                print(new_line)
+                # print(new_line)
                 new_line = new_line.replace(":", "():")
             # if "def" in new_line and "(" in new_line and ")" in new_line:
             # editing true to True
             if "true" in new_line:
-                print(new_line)
+                # print(new_line)
                 new_line = new_line.replace("true", "True")
             # editing with open to add ()
             if "with open" in new_line:
-                print(new_line)
+                # print(new_line)
                 new_line = new_line.replace("open", "open(").replace("as", ") as")
 
             # replace the original line with the modified line
