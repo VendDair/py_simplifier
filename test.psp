@@ -26,11 +26,12 @@ fun test(number):+
 fun loops:+
 	names: ["Andrew1", "Alex", "Josh", "Jake"]
 	for nameloop in names:+
-		if nameloop == "Jake":+
+		-- in if-if* statement you dont need to use ==, instead you use =
+		if nameloop = "Jake":+
 			-- br* is break
 			br*
 		-- if* is elif
-		if* nameloop == "Josh":+
+		if* nameloop = "Josh":+
 			prl"Name is Josh"
 		else:+
 			prlnameloop
@@ -40,7 +41,7 @@ fun variable_content:+
 	prl "Name:+ "
 	-- it writes in terminal "Name: "
 
--- this is 'if "__main__" == __name__:'
+-- this is 'if "__main__" = __name__:'
 ifmain* 
 	prl "hi"
 	-- or for print you can use
