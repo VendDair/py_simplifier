@@ -47,7 +47,7 @@ class Compile:
                 #     words[j] = "True"
 
                 elif word == "ifmain+":
-                    words[j] = 'if "__main__" = __name__:'
+                    words[j] = 'if "__main__" = __name__'
                 elif word == "open+":
                     words[j] = "with open"
                 elif word == "if+":
@@ -78,10 +78,12 @@ class Compile:
                 new_line = new_line.replace("inp", "input(")
                 new_line = new_line + " )"
             # editing () in line with def
+            if "def" in new_line and "(" in new_line and ")" in new_line:
+                new_line = new_line + ":"
             if "def" in new_line and not "(" in new_line and not ")" in new_line:
-                # print(new_line)
-                new_line = new_line.replace(":", "():")
-            # if "def" in new_line and "(" in new_line and ")" in new_line:
+                # new_line = new_line.replace(":", "():")
+                new_line = new_line + "():"
+            
             # editing true to True
             if "true" in new_line:
                 # print(new_line)
@@ -92,7 +94,9 @@ class Compile:
                 new_line = new_line.replace("open", "open(").replace("as", ") as")
             if "if" in new_line:
                 new_line = new_line.replace("=", "==")
-
+            if "==" in new_line:
+                print("kek")
+                new_line = new_line + ":"
             # replace the original line with the modified line
             lines[i] = new_line
 
