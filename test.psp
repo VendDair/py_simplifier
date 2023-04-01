@@ -26,7 +26,7 @@ fun test(number)
 fun loops
 	names: ["Andrew1", "Alex", "Josh", "Jake"]
 	for nameloop in names:+
-		-- in if-if+ statement you dont need to use ==, instead you use =
+		-- in if-if+ statement you dont need to use ==, instead you use =, and also without ":" except else statement
 		if nameloop = "Jake"
 			-- br+ is break
 			br+
