@@ -34,6 +34,11 @@ fun loops:+
 			prl"Name is Josh"
 		else:+
 			prlnameloop
+	
+fun variable_content:+
+	-- if you want to use : in string you may need to write :+
+	prl "Name:+ "
+	-- it writes in terminal "Name: "
 
 -- this is 'if "__main__" == __name__:'
 ifmain* 
