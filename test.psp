@@ -1,16 +1,29 @@
 -- <- this is # in python
 -- this is python but with feature like instead of print() is prl ()
--- simple code in py_rebirth
+-- it dont support comments like prl "hi" -- comment
+-- simple code in py_simplifier
 
-imp math -- imp is import
+-- imp is import
+imp math 
 
-prl ("Hello world") -- Simple hello world
+-- Simple hello world
+prl "Hello world"
 
-fun main():+
-	open* ("test.txt", "w") as file:+
+-- you dont need () if you dont use it
+fun main:+ 
+	open* "test.txt", "w" as file:+
 		file.write("lol")
 
-ifmain* -- this is 'if "__main__" == __name__:'
-	prl ("hi")
-	prl (math.pi)
+-- if you need () you can use it
+fun test(number):+ 
+	re* number * 2
+
+-- this is 'if "__main__" == __name__:'
+ifmain* 
+	prl "hi"
+	-- or for print you can use
+	prl"hi"
+
+	prl math.pi
+	prl test(2)
 	main()
