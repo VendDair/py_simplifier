@@ -1,0 +1,16 @@
+-- <- this is # in python
+-- this is python but with feature like instead of print() is prl ()
+-- simple code in py_rebirth
+
+imp math -- imp is import
+
+prl ("Hello world") -- Simple hello world
+
+fun main():+
+	open* ("test.txt", "w") as file:+
+		file.write("lol")
+
+ifmain* -- this is 'if "__main__" == __name__:'
+	prl ("hi")
+	prl (math.pi)
+	main()
