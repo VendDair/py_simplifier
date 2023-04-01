@@ -12,36 +12,36 @@ prl "Hello world"
 -- Variables looks like this
 name: "Andrew"
 
--- you dont need () if you dont use it
-fun main:+ 
+-- you dont need () if you dont use it, and in many code you dont need ":"
+fun main
 	-- open+ it with open, and you also dont need () here
 	open+ "test.txt", "w" as file:+
 		file.write("lol")
 
 -- if you need () you can use it
-fun test(number):+ 
+fun test(number)
 	-- re+ is return
 	re+ number * 2
 
-fun loops:+
+fun loops
 	names: ["Andrew1", "Alex", "Josh", "Jake"]
 	for nameloop in names:+
 		-- in if-if+ statement you dont need to use ==, instead you use =
-		if nameloop = "Jake":+
+		if nameloop = "Jake"
 			-- br+ is break
 			br+
 		-- if+ is elif
-		if+ nameloop = "Josh":+
+		if+ nameloop = "Josh"
 			prl"Name is Josh"
 		else:+
 			prlnameloop
 	
-fun variable_content:+
+fun variable_content
 	-- if you want to use : in string you may need to write :+
 	prl "Name:+ "
 	-- it writes in terminal "Name: "
 
--- this is 'if "__main__" = __name__:'
+-- this is 'if "__main__" = __name__'
 ifmain+ 
 	prl "hi"
 	-- or for print you can use
