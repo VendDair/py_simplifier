@@ -9,13 +9,18 @@ imp math
 -- Simple hello world
 prl "Hello world"
 
+-- Variables looks like this
+name: "Andrew"
+
 -- you dont need () if you dont use it
 fun main:+ 
+	-- open* it with open, and you also dont need () here
 	open* "test.txt", "w" as file:+
 		file.write("lol")
 
 -- if you need () you can use it
 fun test(number):+ 
+	-- re* is return
 	re* number * 2
 
 -- this is 'if "__main__" == __name__:'
@@ -25,5 +30,13 @@ ifmain*
 	prl"hi"
 
 	prl math.pi
-	prl test(2)
+	prl test(2) + test(2)
+	
+	-- You can print Variables in 2 waves
+	-- First
+	prl name
+	-- Second, you dont need space after prl at all
+	prlname
+
+
 	main()
