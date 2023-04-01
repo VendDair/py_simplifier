@@ -32,11 +32,11 @@ class Compile:
                 elif word.endswith(":+"):
                     words[j] = "".join(words[j].split("+"))
                 # check word init* to replace to __init__
-                elif word == "init*":
+                elif word == "init+":
                     words[j] = "__init__"
-                elif word == "re*":
+                elif word == "re+":
                     words[j] = "return"
-                elif word == "cl*":
+                elif word == "cl+":
                     words[j] = "class"
                 elif word == "fun":
                     words[j] = "def"
@@ -46,13 +46,13 @@ class Compile:
                 # elif word == "true":
                 #     words[j] = "True"
 
-                elif word == "ifmain*":
+                elif word == "ifmain+":
                     words[j] = 'if "__main__" = __name__:'
-                elif word == "open*":
+                elif word == "open+":
                     words[j] = "with open"
-                elif word == "if*":
+                elif word == "if+":
                     words[j] = "elif"
-                elif word == "br*":
+                elif word == "br+":
                     words[j] = "break"
                 # check if the word ends with ":"
                 elif word.endswith(":"):

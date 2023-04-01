@@ -14,24 +14,24 @@ name: "Andrew"
 
 -- you dont need () if you dont use it
 fun main:+ 
-	-- open* it with open, and you also dont need () here
-	open* "test.txt", "w" as file:+
+	-- open+ it with open, and you also dont need () here
+	open+ "test.txt", "w" as file:+
 		file.write("lol")
 
 -- if you need () you can use it
 fun test(number):+ 
-	-- re* is return
-	re* number * 2
+	-- re+ is return
+	re+ number * 2
 
 fun loops:+
 	names: ["Andrew1", "Alex", "Josh", "Jake"]
 	for nameloop in names:+
-		-- in if-if* statement you dont need to use ==, instead you use =
+		-- in if-if+ statement you dont need to use ==, instead you use =
 		if nameloop = "Jake":+
-			-- br* is break
-			br*
-		-- if* is elif
-		if* nameloop = "Josh":+
+			-- br+ is break
+			br+
+		-- if+ is elif
+		if+ nameloop = "Josh":+
 			prl"Name is Josh"
 		else:+
 			prlnameloop
@@ -42,7 +42,7 @@ fun variable_content:+
 	-- it writes in terminal "Name: "
 
 -- this is 'if "__main__" = __name__:'
-ifmain* 
+ifmain+ 
 	prl "hi"
 	-- or for print you can use
 	prl"hi"
