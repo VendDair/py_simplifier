@@ -107,6 +107,7 @@ class Compile:
 # translator.main()
 # translator.run_code()
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python3 compile.py input_file output_file")
