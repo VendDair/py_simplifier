@@ -47,7 +47,7 @@ class Compile:
                 #     words[j] = "True"
 
                 elif word == "ifmain*":
-                    words[j] = 'if "__main__" == __name__:'
+                    words[j] = 'if "__main__" = __name__:'
                 elif word == "open*":
                     words[j] = "with open"
                 elif word == "if*":
@@ -90,6 +90,8 @@ class Compile:
             if "with open" in new_line:
                 # print(new_line)
                 new_line = new_line.replace("open", "open(").replace("as", ") as")
+            if "if" in new_line:
+                new_line = new_line.replace("=", "==")
 
             # replace the original line with the modified line
             lines[i] = new_line
