@@ -23,6 +23,18 @@ fun test(number):+
 	-- re* is return
 	re* number * 2
 
+fun loops:+
+	names: ["Andrew1", "Alex", "Josh", "Jake"]
+	for nameloop in names:+
+		if nameloop == "Jake":+
+			-- br* is break
+			br*
+		-- if* is elif
+		if* nameloop == "Josh":+
+			prl"Name is Josh"
+		else:+
+			prlnameloop
+
 -- this is 'if "__main__" == __name__:'
 ifmain* 
 	prl "hi"
@@ -32,11 +44,13 @@ ifmain*
 	prl math.pi
 	prl test(2) + test(2)
 	
-	-- You can print Variables in 2 waves
+	-- You can print Variables in 2 ways
 	-- First
 	prl name
 	-- Second, you dont need space after prl at all
 	prlname
+
+	loops()
 
 
 	main()
