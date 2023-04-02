@@ -41,6 +41,15 @@ fun variable_content
 	prl "Name:+ "
 	-- it writes in terminal "Name: "
 
+cl+ Test
+	init+ (self, string)
+		self.string: string
+	fun print_string(self)
+		prl self.string
+
+class_test: Test("test")
+class_test.print_string()
+
 -- this is 'if __name__ = "__main__"'
 ifname+ 
 	prl "hi"
