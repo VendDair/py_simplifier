@@ -56,6 +56,21 @@ class Compile:
                     words[j] = "elif"
                 elif word == "br+":
                     words[j] = "break"
+                elif word == "imp_tmp+":
+                    words[j] = "import sys\nimport os\nsys.path.append(os.path.abspath('tmp'))"
+                elif word == "compile":
+                    output = words[j + 1]
+                    if output.endswith("psp"):
+                        output = output.split("psp")
+                        output = output[0] + "py"
+                        output = "tmp/" + output
+                        if "tmp" not in os.listdir("."):
+                            os.system("mkdir tmp")
+                        os.system(f"python3 compile.py {words[j + 1]} {output} compile")
+                        words[j] = ""
+                        words[j + 1] = ""
+                    else:
+                        pass
                 # check if the word ends with ":"
                 elif word.endswith(":"):
                     if word.startswith('("'):
