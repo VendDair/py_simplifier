@@ -135,11 +135,15 @@ class Compile:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python3 compile.py input_file output_file")
+    if len(sys.argv) != 4:
+        print("Usage: python3 compile.py input_file output_file run/compile")
     else:
         input_file = sys.argv[1]
         output_file = sys.argv[2]
-        translator = Compile(input_file, output_file)
-        translator.main()
-        translator.run_code()
+        if sys.argv[3] == "run":
+            translator = Compile(input_file, output_file)
+            translator.main()
+            translator.run_code()
+        elif sys.argv[3] == "compile":
+            translator = Compile(input_file, output_file)
+            translator.main()
