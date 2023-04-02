@@ -104,15 +104,6 @@ class Compile:
                 new_line = new_line + ":"
             if "if" in new_line and "=" in new_line and ">" in new_line:
                 new_line = new_line + ":"
-            if "elif" in new_line and "=" in new_line and not "!" in new_line and not "<" in new_line and not ">" in new_line:
-                new_line = new_line.replace("=", "==")
-                new_line = new_line + ":"
-            if "elif" in new_line and "=" in new_line and "!" in new_line:
-                new_line = new_line + ":"
-            if "elif" in new_line and "=" in new_line and "<" in new_line:
-                new_line = new_line + ":"
-            if "elif" in new_line and "=" in new_line and ">" in new_line:
-                new_line = new_line + ":"
             if "for" in new_line and "in" in new_line:
                 new_line = new_line + ":"
             # if "==" in new_line:
