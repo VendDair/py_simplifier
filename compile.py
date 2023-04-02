@@ -72,55 +72,55 @@ class Compile:
 
             # posediting some words
             # editing prl word
-            if "prl" in new_line:
+            if "prl" in new_line and not "#" in new_line:
                 # print(new_line)
                 new_line = new_line.replace("prl", "print(")
                 new_line = new_line + " )"
                 # new_line = new_line.replace("# print", "kek")
             # editing inp
-            if "inp" in new_line:
+            if "inp" in new_line and "#" in new_line:
                 # print(new_line)
                 new_line = new_line.replace("inp", "input(")
                 new_line = new_line + " )"
             # editing () in line with def
-            if "def" in new_line and "(" in new_line and ")" in new_line:
+            if "def" in new_line and "(" in new_line and ")" in new_line and not "#" in new_line:
                 new_line = new_line + ":"
-            if "def" in new_line and not "(" in new_line and not ")" in new_line:
+            if "def" in new_line and not "(" in new_line and not ")" in new_line and not "#" in new_line:
                 # new_line = new_line.replace(":", "():")
                 new_line = new_line + "():"
             
             # editing true to True
-            if "true" in new_line:
+            if "true" in new_line and not "#" in new_line:
                 # print(new_line)
                 new_line = new_line.replace("true", "True")
             # editing with open to add ()
-            if "with open" in new_line and "as" in new_line and '"' in new_line:
+            if "with open" in new_line and "as" in new_line and '"' in new_line and not "#" in new_line:
                 # print(new_line)
                 new_line = new_line.replace("open", "open(").replace("as", ") as")
                 new_line = new_line + ":"
-            if "if" in new_line and "=" in new_line and not "!" in new_line and not "<" in new_line and not ">" in new_line:
+            if "if" in new_line and "=" in new_line and not "!" in new_line and not "<" in new_line and not ">" in new_line and not "#" in new_line:
                 new_line = new_line.replace("=", "==")
                 new_line = new_line + ":"
-            if "if" in new_line and "=" in new_line and "!" in new_line:
+            if "if" in new_line and "=" in new_line and "!" in new_line and not "#" in new_line:
                 new_line = new_line + ":"
-            if "if" in new_line and "=" in new_line and "<" in new_line:
+            if "if" in new_line and "=" in new_line and "<" in new_line and not "#" in new_line:
                 new_line = new_line + ":"
-            if "if" in new_line and "=" in new_line and ">" in new_line:
+            if "if" in new_line and "=" in new_line and ">" in new_line and not "#" in new_line:
                 new_line = new_line + ":"
-            if "for" in new_line and "in" in new_line:
+            if "for" in new_line and "in" in new_line and not "#" in new_line:
                 new_line = new_line + ":"
             # if "==" in new_line:
             #     new_line = new_line + ":"
 
-            if "cl+" in new_line:
+            if "cl+" in new_line and not "" in new_line:
                 new_line = new_line.replace("cl+", "class ")
                 new_line = new_line + ":"
 
-            if "compile" in new_line and not "#" in new_line:
+            if "compile" in new_line and not "#" in new_line and not "" in new_line:
                     output = new_line.replace("compile ", "")
                     input_compile = output
                     # output = words[j + 1]
-                    if output.endswith("psp"):
+                    if output.endswith("psp") and not "#" in new_line:
                         output = output.split("/")
                         output = output[-1]
                         output = output.split("psp")
