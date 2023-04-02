@@ -112,11 +112,11 @@ class Compile:
             # if "==" in new_line:
             #     new_line = new_line + ":"
 
-            if "cl+" in new_line and not "" in new_line:
+            if "cl+" in new_line and not "#" in new_line:
                 new_line = new_line.replace("cl+", "class ")
                 new_line = new_line + ":"
 
-            if "compile" in new_line and not "#" in new_line and not "" in new_line:
+            if "compile" in new_line and not "#" in new_line:
                     output = new_line.replace("compile ", "")
                     input_compile = output
                     # output = words[j + 1]
