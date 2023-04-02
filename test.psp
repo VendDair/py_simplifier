@@ -9,6 +9,20 @@ prl "You can write python code like len(something)"
 -- imp is import
 imp math 
 
+-- if you want to import functions or another file, you need to use
+imp_tmp+
+-- it import os and sys and adds tmp folder to python path
+-- now you need to compile your file, it makes folder tmp in main dir and compile .psp file to it
+compile import_test.psp
+-- now you import this file
+from import_test imp get_info
+-- now start func that is in it
+get_info()
+-- and you want to import  file that is in subfolder, you need to
+compile test_folder/import_from_subfolder.psp
+from import_from_subfolder imp get_info_subfolder
+get_info_subfolder()
+
 -- Simple hello world
 prl "Hello world"
 

@@ -1,0 +1,2 @@
+fun get_info
+    prl "Hello from import.psp file"

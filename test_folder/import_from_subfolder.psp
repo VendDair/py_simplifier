@@ -1,0 +1,2 @@
+fun get_info_subfolder
+    prl"Hi from .psp file in subfolder!"

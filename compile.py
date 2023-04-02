@@ -58,21 +58,7 @@ class Compile:
                     words[j] = "break"
                 elif word == "imp_tmp+":
                     words[j] = "import sys\nimport os\nsys.path.append(os.path.abspath('tmp'))"
-                elif word == "compile":
-                    output = words[j + 1]
-                    if output.endswith("psp"):
-                        output = output.split("/")
-                        output = output[-1]
-                        output = output.split("psp")
-                        output = output[0] + "py"
-                        output = "tmp/" + output
-                        if "tmp" not in os.listdir("."):
-                            os.system("mkdir tmp")
-                        os.system(f"python3 compile.py {words[j + 1]} {output} compile")
-                        words[j] = ""
-                        words[j + 1] = ""
-                    else:
-                        pass
+                
                 # check if the word ends with ":"
                 elif word.endswith(":"):
                     if word.startswith('("'):
@@ -129,6 +115,23 @@ class Compile:
             if "cl+" in new_line:
                 new_line = new_line.replace("cl+", "class ")
                 new_line = new_line + ":"
+
+            if "compile" in new_line and not "#" in new_line:
+                    output = new_line.replace("compile ", "")
+                    input_compile = output
+                    # output = words[j + 1]
+                    if output.endswith("psp"):
+                        output = output.split("/")
+                        output = output[-1]
+                        output = output.split("psp")
+                        output = output[0] + "py"
+                        output = "tmp/" + output
+                        if "tmp" not in os.listdir("."):
+                            os.system("mkdir tmp")
+                        os.system(f"python3 compile.py {input_compile} {output} compile")
+                        new_line = ""
+                    else:
+                        pass
 
             # test for init+    
             # if "__init__" in new_line and "def" in new_line:
