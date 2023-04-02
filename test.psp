@@ -15,7 +15,7 @@ name: "Andrew"
 -- you dont need () if you dont use it, and in many code you dont need ":"
 fun main
 	-- open+ it with open, and you also dont need () here
-	open+ "test.txt", "w" as file:+
+	open+ "test.txt", "w" as file
 		file.write("lol")
 
 -- if you need () you can use it
@@ -25,8 +25,8 @@ fun test(number)
 
 fun loops
 	names: ["Andrew1", "Alex", "Josh", "Jake"]
-	for nameloop in names:+
-		-- in if-if+ statement you dont need to use ==, instead you use =, and also without ":" except else statement
+	for nameloop in names
+		-- in if-if+ statement you dont need to use ==, instead you use =, and also without ":+" except else statement
 		if nameloop = "Jake"
 			-- br+ is break
 			br+
@@ -41,8 +41,8 @@ fun variable_content
 	prl "Name:+ "
 	-- it writes in terminal "Name: "
 
--- this is 'if "__main__" = __name__'
-ifmain+ 
+-- this is 'if __name__ = "__main__"'
+ifname+ 
 	prl "hi"
 	-- or for print you can use
 	prl"hi"
