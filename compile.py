@@ -61,6 +61,8 @@ class Compile:
                 elif word == "compile":
                     output = words[j + 1]
                     if output.endswith("psp"):
+                        output = output.split("/")
+                        output = output[-1]
                         output = output.split("psp")
                         output = output[0] + "py"
                         output = "tmp/" + output
