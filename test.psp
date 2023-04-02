@@ -32,7 +32,7 @@ fun loops
 			br+
 		-- if+ is elif
 		if+ nameloop = "Josh"
-			prl"Name is Josh"
+			prl "Name is Josh"
 		if+ nameloop != "Max"
 			prl"Max is not there"
 		else:+
