@@ -33,6 +33,8 @@ fun loops
 		-- if+ is elif
 		if+ nameloop = "Josh"
 			prl"Name is Josh"
+		if+ nameloop != "Max"
+			prl"Max is not there"
 		else:+
 			prlnameloop
 	
