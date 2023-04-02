@@ -33,11 +33,13 @@ class Compile:
                     words[j] = "".join(words[j].split("+"))
                 # check word init* to replace to __init__
                 elif word == "init+":
-                    words[j] = "__init__"
+                    words[j] = "def __init__"
                 elif word == "re+":
                     words[j] = "return"
-                elif word == "cl+":
-                    words[j] = "class"
+
+                # elif word == "cl+":
+                #     words[j] = "class"
+
                 elif word == "fun":
                     words[j] = "def"
                 elif word == "--":
@@ -93,12 +95,22 @@ class Compile:
                 # print(new_line)
                 new_line = new_line.replace("open", "open(").replace("as", ") as")
                 new_line = new_line + ":"
-            if "if" in new_line and "=" in new_line:
+            if "if" in new_line and "=" in new_line and not "!" in new_line:
                 new_line = new_line.replace("=", "==")
+                new_line = new_line + ":"
+            if "if" in new_line and "=" in new_line and "!" in new_line:
                 new_line = new_line + ":"
             if "for" in new_line and "in" in new_line:
                 new_line = new_line + ":"
             # if "==" in new_line:
+            #     new_line = new_line + ":"
+
+            if "cl+" in new_line:
+                new_line = new_line.replace("cl+", "class ")
+                new_line = new_line + ":"
+
+            # test for init+    
+            # if "__init__" in new_line and "def" in new_line:
             #     new_line = new_line + ":"
 
             # replace the original line with the modified line
