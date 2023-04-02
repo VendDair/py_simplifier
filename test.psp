@@ -3,6 +3,9 @@
 -- it dont support comments like prl "hi" -- comment
 -- simple code in py_simplifier
 
+prl "This is script that contains examples of code that you can use"
+prl "You can write python code like len(something)"
+
 -- imp is import
 imp math 
 
